@@ -1,6 +1,3 @@
-//
-// Created by Karmu on 25-3-31.
-//
 
 #ifndef UNTITLED_DROPLETSENSOR_H
 #define UNTITLED_DROPLETSENSOR_H
