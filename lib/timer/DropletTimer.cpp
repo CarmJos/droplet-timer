@@ -6,14 +6,9 @@ DropletSensor::DropletSensor(
         uint8_t samples,
         int threshold,
         uint8_t pin
-) : sampling_interval(interval),
-    trigger_threshold(threshold),
-    sensor_pin(pin),
-    max_samples(samples > 0 ? samples : 1),
-    current(0),
-    flag(true),
-    average(0),
-    per_second(0) {
+) : sampling_interval(interval), trigger_threshold(threshold),
+    sensor_pin(pin), max_samples(samples > 0 ? samples : 1),
+    current(0), flag(true), average(0), per_second(0) {
     intervals = new unsigned int[max_samples](); // 动态分配并初始化为0
 }
 

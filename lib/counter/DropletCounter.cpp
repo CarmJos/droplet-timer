@@ -6,13 +6,9 @@ DropletCounter::DropletCounter(
         unsigned long sampling_duration,
         int threshold,
         uint8_t pin
-) : sampling_duration(sampling_duration),
-    trigger_threshold(threshold),
-    sensor_pin(pin),
-    max_records(max_records),
-    flag(false),
-    count(0),
-    average(0) {
+) : sampling_duration(sampling_duration), trigger_threshold(threshold),
+    sensor_pin(pin), max_records(max_records),
+    flag(false), count(0), average(0) {
     timestamps = new unsigned long[max_records]();
 }
 
