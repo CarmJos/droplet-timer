@@ -57,7 +57,7 @@ void DropletCounter::calculate(unsigned long current_millis) {
     average = (double) valid_count / (sampling_duration / 1000.0);
 }
 
-void DropletCounter::draw(U8G2 *display, const int yOffset, const char str[]) {
+void DropletCounter::draw(U8G2 *display, const int yOffset, const char str[]) const {
     display->setCursor(0, yOffset);
     display->print(str);
     display->setCursor(15, yOffset);

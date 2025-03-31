@@ -60,7 +60,7 @@ void DropletSensor::record() {
     calculate();
 }
 
-void DropletSensor::draw(U8G2 *display, const int yOffset, const char str[]) {
+void DropletSensor::draw(U8G2 *display, int yOffset, const char str[]) const {
     display->setCursor(0, yOffset);
     display->print(str);
     display->setCursor(15, yOffset);

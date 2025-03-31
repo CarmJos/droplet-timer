@@ -30,7 +30,7 @@ public:
     * @param str      显示前缀
     * @param yOffset  显示行像素偏移量
     */
-    void draw(U8G2 *display, const int yOffset, const char str[]);
+    void draw(U8G2 *display, int yOffset, const char str[]) const;
 
     /**
      * 得到当前液滴平均间隔时间
