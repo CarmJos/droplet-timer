@@ -1,6 +1,5 @@
-
-#ifndef UNTITLED_DROPLETSENSOR_H
-#define UNTITLED_DROPLETSENSOR_H
+#ifndef DROPLET_SENSOR_H
+#define DROPLET_SENSOR_H
 
 #include "Arduino.h"
 
@@ -64,4 +63,4 @@ private:
     double per_second;  // 每秒液滴数
 };
 
-#endif //UNTITLED_DROPLETSENSOR_H
+#endif
