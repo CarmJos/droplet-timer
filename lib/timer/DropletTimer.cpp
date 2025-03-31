@@ -65,3 +65,14 @@ void DropletSensor::record() {
     current = 0;
     calculate();
 }
+
+void DropletSensor::draw(U8G2 *display, const int yOffset, const char str[]) {
+    display->setCursor(0, yOffset);
+    display->print(str);
+    display->setCursor(15, yOffset);
+    display->print(getDropletsPerSecond(), 1);
+    display->setCursor(55, yOffset);
+    display->print("D/s |");
+    display->setCursor(95, yOffset);
+    display->print(getCurrentSeconds(), 1);
+}

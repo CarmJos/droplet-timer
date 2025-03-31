@@ -16,22 +16,8 @@ DropletCounter sensor1(MAX_TIMESTAMPS, SAMPLING_DURATION, TRIGGER_THRESHOLD, A14
 DropletCounter sensor2(MAX_TIMESTAMPS, SAMPLING_DURATION, TRIGGER_THRESHOLD, A13);
 DropletCounter sensor3(MAX_TIMESTAMPS, SAMPLING_DURATION, TRIGGER_THRESHOLD, A12);
 
-/**
- * 显示数据到屏幕
- * @param droplet  液滴结构体指针
- * @param str      显示前缀
- * @param yOffset  显示行像素偏移量
- */
-void draw_data_line(DropletCounter *droplet, const char str[], const int yOffset) {
-    lcd.setCursor(0, yOffset);
-    lcd.print(str);
-    lcd.setCursor(15, yOffset);
-    lcd.print(droplet->getDropletsPerSecond(), 1); // 保留1位小数
-    lcd.setCursor(55, yOffset);
-    lcd.print("D/s");
-}
-
 void update_display() {
+
     sensor1.calculate(current_millis);
     sensor2.calculate(current_millis);
     sensor3.calculate(current_millis);
@@ -39,9 +25,9 @@ void update_display() {
     lcd.firstPage();
     do {
         lcd.setFont(u8g2_font_ncenB10_tr);
-        draw_data_line(&sensor1, "1:", 15);
-        draw_data_line(&sensor2, "2:", 35);
-        draw_data_line(&sensor3, "3:", 55);
+        sensor1.draw(&lcd, 15, "1:");
+        sensor2.draw(&lcd, 35, "2:");
+        sensor3.draw(&lcd, 55, "3:");
     } while (lcd.nextPage());
 }
 

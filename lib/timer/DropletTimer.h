@@ -2,6 +2,7 @@
 #define DROPLET_SENSOR_H
 
 #include "Arduino.h"
+#include "U8g2lib.h"
 
 class DropletSensor {
 public:
@@ -22,6 +23,14 @@ public:
      * 读取液滴传感器，并进行触发判断
      */
     void read();
+
+    /**
+    * 显示数据到屏幕
+    * @param droplet  液滴结构体指针
+    * @param str      显示前缀
+    * @param yOffset  显示行像素偏移量
+    */
+    void draw(U8G2 *display, const int yOffset, const char str[]);
 
     /**
      * 得到当前液滴平均间隔时间
