@@ -1,5 +1,4 @@
 #include "DropletTimer.h"
-#include <Arduino.h> // 包含 analogRead 的声明
 
 DropletSensor::DropletSensor(
         unsigned int interval,

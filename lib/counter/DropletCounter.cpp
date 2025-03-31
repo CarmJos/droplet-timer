@@ -1,5 +1,4 @@
 #include "DropletCounter.h"
-#include <Arduino.h>
 
 DropletCounter::DropletCounter(
         uint8_t max_records,
