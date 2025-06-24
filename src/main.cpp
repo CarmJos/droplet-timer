@@ -33,10 +33,12 @@ void update_display() {
 
 void setup() {
     Serial.begin(9600);
-    MsTimer2::set(DISPLAY_REFRESH_INTERVAL, update_display);
-    MsTimer2::start();
-    lcd.begin();
     pinMode(14, OUTPUT);
+    
+    MsTimer2::set(DISPLAY_REFRESH_INTERVAL, update_display);
+    
+    lcd.begin();
+    MsTimer2::start();
 }
 
 void loop() {
